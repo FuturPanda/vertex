@@ -1,5 +1,5 @@
 "use client";
-import { Layout } from "./Layout.js";
+import Layout from "./Layout.js";
 import NavBar from "../components/NavBar.js";
 
 export default function App() {

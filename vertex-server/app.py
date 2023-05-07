@@ -5,7 +5,7 @@ db = SQLAlchemy()
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql:///project.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:''@localhost/"
 
 
 @app.route("/", methods=["GET"])
