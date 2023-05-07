@@ -1,6 +1,6 @@
 "use client";
-import Tiptap from "../components/Tiptap.js";
-import SideBar from "../components/SideBar.js";
+import Tiptap from "./Tiptap.js";
+import SideBar from "./SideBar.js";
 
 import React from "react";
 import {
