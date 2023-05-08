@@ -1,0 +1,10 @@
+.navbar {
+  width: 100vw;
+  height: 120px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.brand_name {
+  color: Blue;
+}
