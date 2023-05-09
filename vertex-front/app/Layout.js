@@ -1,3 +1,4 @@
+// import { useState } from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -9,9 +10,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // const [userSession, setUserSession] = useState();
+  // const getUserSession = (usr) => {
+  //   if (!usr) {
+  //     setUserSession(null);
+  //   }
+  // };
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="bg-white w-screen h-screen">{children}</body>
     </html>
   );
 }

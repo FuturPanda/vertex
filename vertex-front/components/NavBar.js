@@ -34,16 +34,9 @@ function stringAvatar(name) {
 
 export default function NavBar() {
   return (
-    <nav className={styles.navbar}>
-      <Stack
-        direction="row"
-        spacing={2}
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <h1 className={styles.brand_name}>Vertex</h1>
-        <Avatar {...stringAvatar("Kent Dodds")} />
-      </Stack>
+    <nav className="flex justify-between p-10">
+      <h1 className={styles.brand_name}>Vertex</h1>
+      <Avatar {...stringAvatar("Kent Dodds")} />
     </nav>
   );
 }
