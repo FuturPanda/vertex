@@ -13,6 +13,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useRouter } from "next/router";
 
 const postData = async (url, data) => {
   const response = await fetch(url, {
@@ -22,16 +23,15 @@ const postData = async (url, data) => {
       "Content-Type": "application/json; charset=utf-8",
     },
   })
-    .then((res) => res.json()) // here is my code waites the responce from the server
+    .then((res) => res.json())
     .then((res) => {
-      console.log("sucess");
+      console.log("success");
     })
     .catch((err) => {
       console.log("Type send failed", err);
     });
   console.log(JSON.stringify(data));
   console.log(response);
-  return response.json();
 };
 function Copyright(props) {
   return (
@@ -55,6 +55,7 @@ const theme = createTheme();
 
 export default function SignUp() {
   const handleSubmit = (event) => {
+    const router = useRouter();
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const dataToSend = {
@@ -65,7 +66,7 @@ export default function SignUp() {
     };
     console.log(dataToSend);
     const response = postData("http://127.0.0.1:5000/login", dataToSend);
-    console.log(response);
+    router.push("/");
   };
 
   return (

@@ -2,6 +2,9 @@
 import styles from "./navbar.module.css";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
+import Link from "next/link";
+import { useSession, signIn, signOut } from "next-auth/react";
+import NavbarButtonLogin from "./NavbarButtonLogin";
 
 function stringToColor(string) {
   let hash = 0;
@@ -23,20 +26,39 @@ function stringToColor(string) {
   return color;
 }
 
-function stringAvatar(name) {
-  return {
-    sx: {
-      bgcolor: stringToColor(name),
-    },
-    children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
-  };
-}
-
 export default function NavBar() {
+  const { data: session } = useSession();
   return (
-    <nav className="flex justify-between p-10">
-      <h1 className={styles.brand_name}>Vertex</h1>
-      <Avatar {...stringAvatar("Kent Dodds")} />
+    <nav className="flex flex-row justify-between w-full absolute">
+      <Stack
+        spacing={2}
+        direction="row"
+        p={3}
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <h1>VERTEX</h1>
+        <div>
+          <Stack
+            spacing={2}
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <div>
+              <Stack
+                spacing={2}
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                <NavbarButtonLogin />
+              </Stack>
+            </div>
+            {session ? <Avatar src={session.user.image}></Avatar> : ""}
+          </Stack>
+        </div>
+      </Stack>
     </nav>
   );
 }
