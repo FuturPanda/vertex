@@ -8,7 +8,7 @@ const Tiptap = () => {
     extensions: [StarterKit],
     editorProps: {
       attributes: {
-        class: "w-full mt-10",
+        // class: "w-full mt-10",
       },
     },
     content: "<p>Hello World! 🌎️</p>",

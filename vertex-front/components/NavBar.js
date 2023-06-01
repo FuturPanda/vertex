@@ -5,6 +5,7 @@ import Stack from "@mui/material/Stack";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import NavbarButtonLogin from "./NavbarButtonLogin";
+import { MarkdownToolbar } from "@remirror/react";
 
 function stringToColor(string) {
   let hash = 0;
