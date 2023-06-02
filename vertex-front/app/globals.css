@@ -1,8 +1,59 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
-.ProseMirror {
-  width: 100vw;
-  height: 500px;
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-#hero-section {
+.ProseMirror {
+  width: 100%;
+  height: 500%;
+  outline: non;
+  border: none;
+  padding: 20px 20px;
+}
+.ProseMirror:focus {
+  outline: none;
+  border: none;
+}
+
+body {
+  overflow: hidden;
+  width: 100vw;
   height: 100vh;
+}
+
+.navbar {
+  background-color: white;
+  width: 100vw;
+  height: 80px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.cardwrapper {
+  padding-top: 80px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  z-index: 1;
+}
+
+.card {
+  /* margin-top: 80px; */
+  height: 100%;
+  width: 100%;
+}
+.top {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  overflow: hidden;
 }

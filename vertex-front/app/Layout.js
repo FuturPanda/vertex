@@ -16,10 +16,7 @@ export default function RootLayout({ children, session }) {
   return (
     <SessionProvider session={session}>
       <html lang="en">
-        <body className="bg-white w-screen h-screen">
-          <NavBar />
-          {children}
-        </body>
+        <body>{children}</body>
       </html>
     </SessionProvider>
   );

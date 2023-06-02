@@ -7,8 +7,6 @@ import { useEffect, useState, useRef } from "react";
 import SignIn from "@/app/signin/page.js";
 import Stack from "@mui/material/Stack";
 import { SessionProvider } from "next-auth/react";
-import MarkdownEditor from "../components/Editor/MarkdownEditor.tsx";
-import { MyEditor } from "../components/Editor/Editor.tsx";
 
 export default function Home() {
   const [user, setUser] = useState("");

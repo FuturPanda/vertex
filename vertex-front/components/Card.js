@@ -1,10 +1,10 @@
 import React from "react";
-import { MyEditor } from "./Editor/Editor";
+import Tiptap from "./TipTap";
 
-const Card = ({ id }) => {
+const Card = () => {
   return (
-    <div id={id} className="card">
-      <MyEditor />
+    <div className="card">
+      <Tiptap />
     </div>
   );
 };

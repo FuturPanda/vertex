@@ -5,7 +5,6 @@ import Stack from "@mui/material/Stack";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import NavbarButtonLogin from "./NavbarButtonLogin";
-import { MarkdownToolbar } from "@remirror/react";
 
 function stringToColor(string) {
   let hash = 0;
@@ -30,15 +29,15 @@ function stringToColor(string) {
 export default function NavBar() {
   const { data: session } = useSession();
   return (
-    <nav className={styles.navbar}>
-      <Stack
+    <nav className="navbar">
+      <h1>VERTEX</h1>
+      {/* <Stack
         spacing={2}
         direction="row"
         p={3}
         justifyContent="space-between"
         alignItems="center"
       >
-        <h1>VERTEX</h1>
         <div>
           <Stack
             spacing={2}
@@ -59,7 +58,7 @@ export default function NavBar() {
             {session ? <Avatar src={session.user.image}></Avatar> : ""}
           </Stack>
         </div>
-      </Stack>
+      </Stack> */}
     </nav>
   );
 }
