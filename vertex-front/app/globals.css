@@ -1,8 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
 .ProseMirror {
   width: 100vw;
   height: 500px;
 }
-
-body {
-  background-color: #122430;
+#hero-section {
+  height: 100vh;
 }

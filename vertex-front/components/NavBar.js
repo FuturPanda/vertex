@@ -30,7 +30,7 @@ function stringToColor(string) {
 export default function NavBar() {
   const { data: session } = useSession();
   return (
-    <nav className="flex flex-row justify-between w-full absolute">
+    <nav className={styles.navbar}>
       <Stack
         spacing={2}
         direction="row"

@@ -26,6 +26,16 @@ import {
 const ydoc = new Y.Doc();
 // clients connected to the same room-name share document updates
 const provider = new WebrtcProvider("remirror-yjs-demo", ydoc);
+const SAMPLE_DOC = {
+  type: "doc",
+  content: [
+    {
+      type: "paragraph",
+      attrs: { dir: null, ignoreBidiAutoUpdate: null },
+      content: [{ type: "text", text: "Loaded content" }],
+    },
+  ],
+};
 
 const extensions = () => [
   new AnnotationExtension(),
@@ -36,15 +46,15 @@ const extensions = () => [
 ];
 
 const Menu = () => {
-  // const { toggleBold, focus } = useCommands();
-  // const active = useActive();
-  // const { removeAnnotations, addAnnotation, redrawAnnotations } = useCommands();
-  // const { getAnnotationsAt, selectionHasAnnotation } = useHelpers();
-  // const selection = useCurrentSelection();
+  const { toggleBold, focus } = useCommands();
+  const active = useActive();
+  const { removeAnnotations, addAnnotation, redrawAnnotations } = useCommands();
+  const { getAnnotationsAt, selectionHasAnnotation } = useHelpers();
+  const selection = useCurrentSelection();
 
   return (
     <>
-      {/* <button
+      <button
         onClick={() => {
           toggleBold();
           focus();
@@ -79,16 +89,16 @@ const Menu = () => {
         }}
       >
         Redraw annotation(s)
-      </button> */}
+      </button>
     </>
   );
 };
 
-export const MyEditor = ({ initialContent }) => {
+export const MyEditor = ({}) => {
   const { manager, state } = useRemirror({
     extensions,
     core: { excludeExtensions: ["history"] },
-    content: initialContent,
+    content: SAMPLE_DOC,
   });
 
   return (
@@ -99,9 +109,7 @@ export const MyEditor = ({ initialContent }) => {
         autoFocus
         autoRender="end"
       >
-        {/* The text editor is placed above the menu to make the zIndex easier to manage for popups */}
         <Menu />
-        {/* <EditorComponent /> */}
       </Remirror>
     </div>
   );
