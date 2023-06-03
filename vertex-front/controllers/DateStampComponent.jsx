@@ -7,7 +7,7 @@ export default (props) => {
   const className = `date-stamp-${today.year}${today.month}${today.day}`;
   return (
     <NodeViewWrapper className="date-stamp-component">
-      <h1 className={className}>{today.toLocaleString()}</h1>
+      <h1 id={className}>{today.toLocaleString()}</h1>
     </NodeViewWrapper>
   );
 };

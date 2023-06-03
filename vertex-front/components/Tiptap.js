@@ -37,6 +37,21 @@ const Tiptap = () => {
     },
   });
 
+  const handleClick = () => {
+    const json = editor.getJSON();
+    console.log(json);
+    const bool = json.content.map((item) =>
+      item.type == "dateStampComponent" ? true : false
+    );
+    if (bool.includes(true)) {
+      console.log("Gotcha");
+    }
+    console.log(bool);
+    // for (let i = 0; i < 50; i++) {
+    //   console.log(json.content);
+    // }
+  };
+
   useState(() => {
     editor.commands.insertContentAt(
       2,
@@ -47,6 +62,7 @@ const Tiptap = () => {
   }, []);
   return (
     <>
+      <button onClick={handleClick}> Json</button>
       <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
         <button
           onClick={() => editor.chain().focus().toggleBold().run()}

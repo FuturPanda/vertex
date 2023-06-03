@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import SignIn from "@/app/signin/page.js";
 import { SessionProvider } from "next-auth/react";
 import Card from "@/components/Card.js";
@@ -7,6 +7,7 @@ import NavBar from "@/components/NavBar";
 
 export default function Home() {
   const handleClick = () => {
+    console.log("Click");
     const json = editor.getJSON();
     console.log(json);
   };
@@ -39,10 +40,10 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <button onClick={handleClick}> Json</button>
       <div className="cardwrapper">
         <Card />
       </div>
+      <div onClick={handleClick}> Json</div>
     </>
   );
 }
