@@ -1,5 +1,6 @@
 import { mergeAttributes, Node } from "@tiptap/core";
 import { ReactNodeViewRenderer } from "@tiptap/react";
+import { v4 as uuidv4 } from "uuid";
 
 import Component from "./DateStampComponent";
 
@@ -10,8 +11,9 @@ export default Node.create({
 
   addAttributes() {
     return {
-      count: {
-        default: 0,
+      id: {
+        default: () => uuidv4(),
+        parseHTML: (element) => element.getAttribute("id"),
       },
     };
   },

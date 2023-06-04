@@ -6,11 +6,6 @@ import styles from "./page.module.css";
 import NavBar from "@/components/NavBar";
 
 export default function Home() {
-  const handleClick = () => {
-    console.log("Click");
-    const json = editor.getJSON();
-    console.log(json);
-  };
   // scroll to position
   // const handleClickScroll = () => {
   //   const element = document.getElementById("section-1");
@@ -43,7 +38,6 @@ export default function Home() {
       <div className="cardwrapper">
         <Card />
       </div>
-      <div onClick={handleClick}> Json</div>
     </>
   );
 }

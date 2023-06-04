@@ -40,13 +40,13 @@ const Tiptap = () => {
   const handleClick = () => {
     const json = editor.getJSON();
     console.log(json);
-    const bool = json.content.map((item) =>
-      item.type == "dateStampComponent" ? true : false
-    );
-    if (bool.includes(true)) {
-      console.log("Gotcha");
-    }
-    console.log(bool);
+    // const bool = json.content.map((item) =>
+    //   item.type == "dateStampComponent" && ? true : false
+    // );
+    // if (bool.includes(true )) {
+    //   console.log("Gotcha");
+    // }
+    // console.log(bool);
     // for (let i = 0; i < 50; i++) {
     //   console.log(json.content);
     // }
@@ -55,6 +55,13 @@ const Tiptap = () => {
   useState(() => {
     editor.commands.insertContentAt(
       2,
+      `
+      <date-stamp-component/>
+      `
+    );
+
+    editor.commands.insertContentAt(
+      10,
       `
       <date-stamp-component/>
       `
